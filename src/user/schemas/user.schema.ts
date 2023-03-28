@@ -1,4 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { CallbackWithoutResultAndOptionalError } from 'mongoose';
+import * as bcrypt from 'bcryptjs';
 
 export enum UserRole {
   ADMIN = 'Admin',
@@ -26,3 +28,16 @@ export class User {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
+UserSchema.pre(
+  'save',
+  async function (next: CallbackWithoutResultAndOptionalError) {
+    if (this.isModified('password')) {
+      const saltOrRounds = 10;
+      const passwordHash = await bcrypt.hash(this.password, saltOrRounds);
+      this.password = passwordHash;
+    }
+
+    return next();
+  },
+);
