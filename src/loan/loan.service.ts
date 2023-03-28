@@ -11,27 +11,27 @@ export class LoanService {
   ) {}
 
   async findAll(): Promise<Loan[]> {
-    const books = await this.loanModel.find();
-    return books;
+    const loans = await this.loanModel.find();
+    return loans;
   }
 
-  async create(book: Loan): Promise<Loan> {
-    const res = await this.loanModel.create(book);
+  async create(loan: Loan): Promise<Loan> {
+    const res = await this.loanModel.create(loan);
     return res;
   }
 
   async findById(id: string): Promise<Loan> {
-    const book = await this.loanModel.findById(id);
+    const loan = await this.loanModel.findById(id);
 
-    if (!book) {
+    if (!loan) {
       throw new NotFoundException('Loan not found.');
     }
 
-    return book;
+    return loan;
   }
 
-  async updateById(id: string, book: Loan): Promise<Loan> {
-    return await this.loanModel.findByIdAndUpdate(id, book, {
+  async updateById(id: string, loan: Loan): Promise<Loan> {
+    return await this.loanModel.findByIdAndUpdate(id, loan, {
       new: true,
       runValidators: true,
     });

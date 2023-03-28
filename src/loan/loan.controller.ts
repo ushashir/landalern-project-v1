@@ -17,12 +17,12 @@ export class LoanController {
   constructor(private loanService: LoanService) {}
 
   @Get()
-  async getAllBooks(): Promise<Loan[]> {
+  async getAllLoans(): Promise<Loan[]> {
     return this.loanService.findAll();
   }
 
   @Post()
-  async createBook(
+  async createLoan(
     @Body()
     book: CreateLoanDto,
   ): Promise<Loan> {
