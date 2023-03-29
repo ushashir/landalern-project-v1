@@ -20,7 +20,7 @@ export class Loan {
   interestRate: string;
 
   @Prop()
-  price: number;
+  amount: number;
 
   @Prop()
   category: Category;

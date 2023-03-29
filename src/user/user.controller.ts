@@ -37,6 +37,14 @@ export class UserController {
     return this.userService.findById(id);
   }
 
+  // @Get(':email')
+  // async getUser(
+  //   @Param('email')
+  //   id: string,
+  // ): Promise<User> {
+  //   return this.userService.findById(id);
+  // }
+
   @Put(':id')
   async updateUser(
     @Param('id')
