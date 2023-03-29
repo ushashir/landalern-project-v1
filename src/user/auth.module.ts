@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 import { UserModule } from '../user/user.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
@@ -16,6 +18,11 @@ import { jwtConstants } from './constants';
     }),
   ],
   providers: [AuthService, JwtStrategy],
+  controllers: [AuthController],
   exports: [AuthService],
 })
 export class AuthModule {}
+
+//  imports: [MongooseModule.forFeature([{ name: 'User', schema: UserSchema }])],
+//   controllers: [UserController],
+//   providers: [UserService],
