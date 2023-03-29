@@ -1,3 +1,19 @@
+## A GitHub repository with all source code and configuration files.
+ - [GitHub Repo](https://github.com/ushashir/landalern-project-v1)
+
+## Instructions for setting up and running the API locally.
+- Clone the repositore at [Here](https://github.com/ushashir/landalern-project-v1)
+- Run `yarn` to install dependencies.
+- Run `yarn start:dev` to start developement server at `localhost:300`
+
+## Documentation for all endpoints, including required parameters and expected responses.
+- A detailed `POSTMAN` documentation is available [Here](https://solar-space-538043.postman.co/workspace/New-Team-Workspace~18b15e15-66e5-4a8b-b620-ea9ab7318f8a/collection/22589980-a48afaeb-ae7f-4523-8c86-9b22659a6939?action=share&creator=22589980)
+## Unit and integration tests for all endpoints.
+- Temporary not available
+## Implementation of a CI/CD and Deployment structure will attract additional scores.
+- Temporary not available
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
